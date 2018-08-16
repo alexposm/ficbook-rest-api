@@ -1,5 +1,6 @@
 import http from 'http';
 import express from 'express';
+import path  from 'path';
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
@@ -19,9 +20,12 @@ app.use(cors({
 	exposedHeaders: config.corsHeaders
 }));
 
-app.use(bodyParser.json({
-	limit : config.bodyLimit
+app.use(bodyParser.urlencoded({
+	limit : config.bodyLimit,
+  extended: true,
 }));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // connect to db
 initializeDb( db => {

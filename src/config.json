@@ -1,5 +1,11 @@
 {
 	"port": 8080,
-	"bodyLimit": "100kb",
-	"corsHeaders": ["Link"]
+	"bodyLimit": "1000kb",
+	"corsHeaders": ["Link"],
+	"mongodb": {
+		"dbuser": "heroku_kr0frcp3",
+		"dbpassword": "ekt01xhbr6m4",
+		"database": "heroku_kr0frcp3",
+        "apiKey": "az2oGGYTIfjpk7OF48rTYYQ8SDSDvW6a"
+	}
 }
